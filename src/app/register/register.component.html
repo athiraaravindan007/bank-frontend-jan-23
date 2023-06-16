@@ -1,0 +1,78 @@
+<header style="width: 100%; height: 300px; background-image: url('https://images.moneycontrol.com/static-mcnews/2021/06/Bank-representational-shutterstock.jpg?impolicy=website&width=770&height=431');">
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg bg-body-transparent">
+    <div class="container-fluid">
+      <a routerLink="" class="navbar-brand text-primary fw-bolder"  >
+        <i  class="fa-sharp fa-solid fa-building-columns fa-beat-fade"></i>
+        Union Bank
+    </a>
+</div>
+</nav>
+</header>
+<!-- marquee   -->
+<marquee bgcolor="yellow" behavior="" direction="">Hai, Dear Valuable Customers Union Bank Welcomes You...</marquee>
+  
+<!-- content -->
+<div class="container mt-5">
+    <h2 class="text-primary mt-2">Union Bank</h2>
+    <p style="text-align: justify;">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores dolorem ea omnis laboriosam reiciendis, culpa excepturi? A sed molestiae aspernatur ipsum. Omnis asperiores recusandae amet porro et nostrum aliquam repellendus?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, quidem libero. Laudantium libero nulla ipsa facilis dolorem dolor animi natus corrupti quos! Perspiciatis adipisci, consectetur veritatis voluptas quos mollitia beatae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ipsa accusantium repellendus numquam doloribus cumque dolorum, quibusdam praesentium quidem molestiae porro odio ipsum. Nobis animi dignissimos aliquam ut perspiciatis excepturi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptate dolore inventore dolorem sit quo voluptas, omnis accusantium maxime voluptatibus assumenda doloremque et id vel amet expedita, perferendis totam odio.
+    </p>
+    <div class="row">
+        <div class="col-lg-4 d-flex align-items-center justify-content-center">
+        <div class="text-center ">
+                <!-- login option -->
+                <p>Already a User? Click below to <span class="fw-bolder text-primary">Login</span></p>
+                <img class="ms-4" width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Arrows_down_animated.gif" alt="down-arrow"><br>
+                <a routerLink="/union-bank/login" class="btn btn-primary ms-4 ">Login In</a>
+        </div>
+        </div>
+
+        <div class="col-lg-2"></div>
+        <div class="col-lg-6 border p-3 rounded">
+            <!-- register form -->
+            <h3>Sign Up...</h3>
+            <!-- binding group/model to html form using property binding-->
+            <!-- ngSubmit is used to sunbmit a form this is an event binding method 
+                (button type="submit" mandatory)-->
+            <form [formGroup]="registerForm" class="" (ngSubmit)="register()" >
+                <div class="mt-2">
+                    <!-- we use form control name for getting values 
+                        from input box to ts file using two way binding (name="--" is mandatory)-->
+                    <input name="username" formControlName="username" type="text" placeholder="User Name" class="form-control">
+                </div>
+                <!-- validation username -->
+                <div *ngIf="this.registerForm.get('username')?.errors && this.registerForm.get('username')?.touched" class="mt-2 text-danger">
+                    Invalid User Name
+                </div>
+                <div class="mt-2">
+                    <input name="acno" formControlName="acno" type="text" placeholder="Account Number" class="form-control">
+                </div>
+                 <!-- validation acno -->
+                 <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched" class="mt-2 text-danger">
+                    Invalid Account Number
+                </div>
+                <div class="mt-2">
+                    <input name="password" formControlName="password" type="password" placeholder="Password" class="form-control">
+                </div>
+                 <!-- validation password -->
+                 <div *ngIf="this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched" class="mt-2 text-danger">
+                    Invalid Password
+                </div>
+                <div class="mt-2">
+                    <input  value="Register" type="submit" class=" btn btn-success" >
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+      <!-- footer -->
+      <footer style="width: 100%; height: 50px; background-color: black; ">
+        <p class="text-center text-light mt-5">&copy; All rights reserved to &reg; <i class="fa-solid fa-building-columns"></i>
+           Union Bank</p>
+      
+      </footer>
+
+

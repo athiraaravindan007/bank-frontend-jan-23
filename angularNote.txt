@@ -1,0 +1,117 @@
+                                Angular - Front end Development
+                        --------------------------------------------------
+
+                                      Basic Commands
+                            -----------------------------------
+
+        1. to create an angular project : ng new project_name
+        2. to run angular project : ng serve  or  ng serve -o
+        3. to generate component : ng g c component_name
+        4. to generate service : ng g s service-folder/service-name
+        5. to generate build : ng build
+        6. to generate userdefined pipe : ng g p pipe-folder/pipe-name
+        7. to generate guard : ng g g guard-folder/guard-name
+
+                                    Basic concept in Angular
+                            ------------------------------------------
+
+        1. Module - to import 3rd party libraries also used to hold components
+        2. Component - html,css,ts also have selector
+        3. Selector - to replace selector tag with  its html page 
+        4. Decorator - to hold metadata , starts with @
+        5. set up path  for component - to view a component in another webpage
+                - use app.routing.module.ts file
+                - use router-outlet selector in root component(app-component) - to navigate
+                  according to the user requested path
+                - routerLink : used to redirect from one page to another
+        6. Data binding - data sharing with in a component 
+                6.1. One way binding : data sharing in one direction
+                        6.1.1. ts(component) to html(view) file
+                                6.1.1.1. String interpolation : {{class property-name}}
+                                6.1.1.2. Property binding : [attribute-name]=" class property-name"
+                        6.1.2. html(view) to ts(component) file
+                                6.1.2.1. Event binding : (event-name)="function call"
+                                6.1.2.2. Event binding using $ event: (event-name)="function-name($event)"
+                                6.1.2.3. Event binding using template reference variable : #variable-name
+                6.2. Two way binding : data sharing both direction
+                        6.2.1. ngModel : import formsModule in AppModule(root module)
+                                         [(ngModel)]="class-property"
+        7.  Angular forms
+                7.1. Template driven forms : first design html file
+                        - Forms module 
+                                - data binding : ngModel
+                7.2. Model driven forms : first create a model in ts file
+                        - Reactive Forms : import  Reactive Forms module to module file
+                                - Form Group : to create a model in ts file : group method (form builder
+                                  class)
+                                - Form Array : get user inputs from html, where we can  give validation
+                                - Form control Name : to link html input tags with form array
+        8. Dependency injection : to share data between dependent classes
+                - constructor(access-specifier variable-name : class-name){
+
+                }
+        9. Angular services : to share common datas between user defined components
+        10. Angular directives : DOM (Document object model) manipulation
+                10.1. component directive : selector
+                10.2. structural directive :change the structure of DOM or add/ remove html items
+                        - *ngFor = "let variable-name of array-name"
+                        - *ngIf = "condition"
+                10.2.3. attribute directive : to apply styles to html elements
+                        - ngClass
+                        - ngForm
+        11. parent-child data sharing :
+                - child to parent communication : @Output decorater
+                - parent to child communication : @input decorator
+
+        12. compilers of angular :  it convert ts and html of angular code to javascript code. this is 
+                                    simply called transpiling.
+                        - just-in-time : compile your application and libraries at run time. this was 
+                                         default until angular 8.
+                        - Ahead of time : compiles your application and libraries at build time. default starting 
+                                          in angular 9.
+
+                                AOT in inside angular.json file
+       
+        13. Asynchronous function handling in angular
+                        - using RxJs (Reactive extentions for java script) library
+                            -use observable to resolve asynchrounous functions
+                                - resolve state : subscribe(observer:object)
+                                        - observer can be next : required, where we get 200 response
+                                          code
+                                        - error -  optional to get all http response error
+                                - reject state : catchError(callback)
+                                    - error() : to get error response when you subscribe it
+       
+        14. API call using angular : HttpClient class
+        ---------------------------
+                    - import Http client module in App module
+        
+        15. Activated route : provides access to information about a route associated with a 
+                              component that is loaded in an outlet.
+        16. pipe : to transform strings, currency, amounts,dates, and other data for display.
+                        eg:- datePipe 
+                             upperCasePipe
+                             currencyPipe
+                             decimalPipe etc
+                syntax : value_expression | pipe-operator [: option1 [ : option2 [ : option3 ] ] ]
+
+        17. Angular Guards : Guards in Angular are nothing but the functionality, logic, and code which are executed before
+                             the route is loaded or the ones leaving the route.
+
+                                  Different types of guards,
+
+                                        - CanActivate guard (e.g. it checks route access).
+                                         - CanActivateChild guard (checks child route access).
+                                        - CanDeactivate guard (prompt for unsaved changes).
+                                        - Resolve guard (pre-fetching route data).
+                                        - CanLoad guard (check before loading feature module assets).
+
+
+
+        
+                    
+
+
+
+
+                                               
